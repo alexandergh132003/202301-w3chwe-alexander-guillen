@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+.pokemon-card {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 16px;
+  -webkit-box-shadow: 10px 10px 43px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 43px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 43px 0px rgba(0, 0, 0, 0.75);
+}
+
+.pokemon-card-basic-info {
+  padding: 20px;
+  width: 300px;
+  border-radius: 0px 0px 16px 16px;
+  background: #0a285f;
+}
+
+.pokemon-image {
+  border-radius: 16px 16px 0px 0px;
+  background: hsla(50, 57%, 47%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(50, 57%, 47%, 1) 0%,
+    hsla(48, 100%, 50%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(50, 57%, 47%, 1) 0%,
+    hsla(48, 100%, 50%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(50, 57%, 47%, 1) 0%,
+    hsla(48, 100%, 50%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#BDA734", endColorstr="#FFCC00", GradientType=1 );
+}
