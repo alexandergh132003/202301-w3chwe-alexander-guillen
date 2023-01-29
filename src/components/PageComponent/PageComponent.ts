@@ -12,7 +12,7 @@ class PageComponent extends Component {
     super.render();
 
     setTimeout(() => {
-      pokemonList.forEach((pokemon) => {
+      pokemonList.forEach((pokemon: PokemonData) => {
         new PokemonBasicCardComponent(this.domElement, pokemon).render();
       });
     }, 3000);
