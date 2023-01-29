@@ -1,5 +1,5 @@
-import pokemonList from "../../pokemons/getPokemons.js";
-import type { PokemonData } from "../../pokemons/types";
+import pokemonList from "../../pokemons/getPokemons";
+import type { PokemonData } from "../../pokemons/types.js";
 import Component from "../Component/Component.js";
 import { PokemonBasicCardComponent } from "../PokemonBasicCard/PokemonBasicCard.js";
 
