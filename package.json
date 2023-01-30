@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-js": "tsc && npx add-js-extension",
+    "build-js": "tsc",
     "build-js:dev": "npm run build-js -- -w",
     "test": "jest",
     "test:dev": "npm test -- --watchAll",
