@@ -1,12 +1,15 @@
-import type { PokemonCollection, PokemonData } from "./types.js";
+import { pokemonCollection } from "../globalVariables/globalVariables";
+import type { PokemonCollection, PokemonData } from "./types";
 
-const requestPokeApi = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1200";
+export const requestPokeApi = "https://pokeapi.co/api/v2/pokemon/";
 
-const pokemonList = [] as any[];
-
-const getPokemonCollection = async () => {
-  const response = await fetch(requestPokeApi);
+const getPokemonCollection = async (url: string) => {
+  const response = await fetch(url);
   const pokemonStore = (await response.json()) as PokemonCollection;
+
+  pokemonCollection.next = pokemonStore.next;
+  pokemonCollection.previous = pokemonStore.previous;
+
   return pokemonStore;
 };
 
@@ -16,12 +19,9 @@ const getPokemonData = async (url: string): Promise<PokemonData> => {
   return pokemonData;
 };
 
-(async () => {
-  const { results } = await getPokemonCollection();
-
-  results.forEach(async ({ url }, index) => {
-    pokemonList[index] = await getPokemonData(url);
-  });
-})();
-
-export default pokemonList;
+export const getPokemonList = async (requestUrl: string) => {
+  const { results } = await getPokemonCollection(requestUrl);
+  const pokemonPromises = results.map(async ({ url }) => getPokemonData(url));
+  const pokemonList = await Promise.all(pokemonPromises);
+  return pokemonList;
+};

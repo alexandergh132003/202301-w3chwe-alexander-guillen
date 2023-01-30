@@ -1,22 +1,66 @@
+@import url("./@fortawesome/fontawesome-free/css/all.min.css");
+@import url("./quicksand/500.css");
+
 * {
   box-sizing: border-box;
   padding: 0;
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .header {
+    justify-content: space-around;
+    gap: 800px;
+  }
+
+  button:first-child {
+    position: absolute;
+    left: 100px;
+  }
+
+  button:last-child {
+    position: absolute;
+    right: 100px;
+  }
+}
+
+.fa-bars {
+  font-size: 30px;
+}
+
 .pokemon-card {
+  margin: 0 auto;
+  margin-bottom: 50px;
   text-align: center;
-  color: white;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 200px;
   border-radius: 16px;
+  color: white;
   -webkit-box-shadow: 10px 10px 43px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 43px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 43px 0px rgba(0, 0, 0, 0.75);
+  font-family: Quicksand;
 }
 
 .pokemon-card-basic-info {
   padding: 20px;
-  width: 300px;
+  width: 200px;
   border-radius: 0px 0px 16px 16px;
   background: #0a285f;
 }
@@ -44,4 +88,31 @@
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#BDA734", endColorstr="#FFCC00", GradientType=1 );
+}
+
+.pokemon-types {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+}
+
+button {
+  margin: 0 auto;
+  font-size: 20px;
+  color: white;
+  background: #fb1b1b;
+  border: 3px solid black;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 10px 6px #dfdfdf;
 }
