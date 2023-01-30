@@ -1,5 +1,5 @@
-import { pokemonCollection } from "../globalVariables/globalVariables";
-import type { PokemonCollection, PokemonData } from "./types";
+import { pokemonCollection } from "../globalVariables/globalVariables.js";
+import type { PokemonCollection, PokemonData } from "./types.js";
 
 export const requestPokeApi = "https://pokeapi.co/api/v2/pokemon/";
 
