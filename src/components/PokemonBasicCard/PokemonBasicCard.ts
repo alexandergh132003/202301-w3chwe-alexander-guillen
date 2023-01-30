@@ -13,7 +13,7 @@ export class PokemonBasicCardComponent extends Component {
     super.render();
 
     this.domElement.innerHTML = `
-      <img src="${this.pokemon.sprites.other["official-artwork"].front_default}" alt="${this.pokemon.name}" class="pokemon-image" width="300" height="300">
+      <img src="${this.pokemon.sprites.other["official-artwork"].front_default}" alt="${this.pokemon.name}" class="pokemon-image" width="200" height="200">
   
       <div class="pokemon-card-basic-info">
         <span class="pokemon-number">N.º ${this.pokemon.id}</span>

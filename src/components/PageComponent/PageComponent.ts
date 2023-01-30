@@ -1,21 +1,15 @@
-import pokemonList from "../../pokemons/getPokemons";
-import type { PokemonData } from "../../pokemons/types.js";
+import { constructCard } from "../../globalVariables/globalVariables.js";
+import { requestPokeApi } from "../../pokemons/getPokemons.js";
 import Component from "../Component/Component.js";
-import { PokemonBasicCardComponent } from "../PokemonBasicCard/PokemonBasicCard.js";
-
 class PageComponent extends Component {
   constructor(parentElement: HTMLElement) {
     super(parentElement, "container", "div");
   }
 
-  render() {
+  async render() {
     super.render();
 
-    setTimeout(() => {
-      pokemonList.forEach((pokemon: PokemonData) => {
-        new PokemonBasicCardComponent(this.domElement, pokemon).render();
-      });
-    }, 3000);
+    await constructCard(requestPokeApi, this.domElement);
   }
 }
 
